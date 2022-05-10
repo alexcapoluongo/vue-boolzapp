@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap" rel="stylesheet">
     <!-- custom style -->
     <link rel="stylesheet" href="css/style.css">
     <!-- vuejs -->
@@ -43,8 +47,8 @@
                             <i class="fas fa-bell-slash"></i>  
                         </div>                      
                         <div class="text-active-notification">
-                            <p>Ricevi notifiche di nuovi messaggi</p>
-                            <p>Attiva notifiche desktop</p>
+                            <p class="top-active">Ricevi notifiche di nuovi messaggi</p>
+                            <p class="down-active">Attiva notifiche desktop</p>
                         </div>
                     </div>
 
@@ -57,12 +61,15 @@
 
                     <!-- contacts list chat -->
                     <div class="contacts-container">
-                        <div class="contact-item">
+                        <div v-for="item in contacts" class="contact-item">
                             <div class="contact-box">
                                 <div class="user-nav-identity">
-                                    <img src="img/avatar_1.jpg" alt="" srcset="">
-                                    <span class="username">Name</span>                          
-                                </div>
+                                    <img :src="'img/avatar'+ item.avatar +'.jpg'" alt="" srcset="">
+                                    <div class="user-text">
+                                        <span class="username">{{ item.name }}</span> 
+                                        <p class="last-message">{{ item.messages[0].message }}...</p>                
+                                    </div>         
+                                </div> 
                                 <div>
                                     <span class="hour-last-chat">12 AM</span>
                                 </div>                                
@@ -79,7 +86,7 @@
                         <div class="user-box">
                             <div class="user-nav-identity">
                                 <img src="img/avatar_1.jpg" alt="" srcset="">
-                                <span class="username">Name</span>                          
+                                <span class="username">name</span>                          
                             </div>
                             <div class="actions-app">
                                 <i class="fas fa-circle-notch"></i>                            
@@ -92,13 +99,17 @@
                     <!-- - chat board -->
                     <div class="chat-board">
                         <div class="row">
-                            <div class="arrived-message"></div>
-                            <div class="sended-message"></div>
+                            <div class="sended-message">hey</div>
                         </div>
 
+                        <!-- //problema di sovrapposizione nei messaggi lunghi -->
                         <div class="row">
-                            <div class="sended-message"></div>
-                            <div class="arrived-message"></div>
+                            <div class="arrived-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et est tenetur, quam dolorem nesciunt dicta necessitatibus non corrupti, officia culpa, inventore libero hic repellat aliquam beatae natus similique minima? Quis.</div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="sended-message">ciao</div>
                         </div>
 
                     </div>

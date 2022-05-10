@@ -7,8 +7,13 @@
 
 /* COMMONS */
 
+html {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
-    background-color: gray;
+    background-color: #d8dbd7;
 }
 
 .container {
@@ -40,7 +45,7 @@ main {
 .user-nav {
     width: 100%;
     height: 60px;
-    border: 1px solid blue; 
+    background-color: #eaeaea;
 }
 
 .user-box {
@@ -77,24 +82,32 @@ main {
     width: 100%;
     height: 70px;
     border: 1px solid red;
+    background-color: #8edafc;
     display: flex;
     align-items: center;
-    justify-content: space-around;
 }
 
 .logo-bell-notification {
     width: 60px;
     height: 60px;
-    border: 1px solid black;
+    background-color: white;
     border-radius: 50%;
     display: flex; 
     align-items: center; 
     justify-content: center;
-
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
 .logo-bell-notification i {
     font-size: 2em;
+    color: #8edafc;
+}
+
+.down-active {
+    color:grey;
+    text-decoration: underline;
+    font-size: .8em;
 }
 
 /* search bar */
@@ -116,7 +129,6 @@ main {
 .contacts-container {
     width: 100%;
     height: calc(100% - 170px);
-    background-color: aquamarine;
     overflow: auto;
 }
 
@@ -130,7 +142,7 @@ main {
 .contact-item {
     width: 100%;
     height: 70px;
-    border: 1px solid red;
+    border-bottom: 1px solid #c4c3c4;
 }
 
 .contact-item img {
@@ -138,6 +150,11 @@ main {
     border-radius: 50%;
 }
 
+.last-message {
+    color: grey;
+    margin-left:1em;
+    font-size:.8em;
+}
 
 
 /* chat */
@@ -151,6 +168,7 @@ main {
     width: 100%;
     height: 60px;
     border: 1px solid blue;
+    background-color: #eaeaea;
 }
 
 /* - chat board */
@@ -163,28 +181,28 @@ main {
 }
 
 .row {
-    width: 100%;
-    height: 100px;
+
+    height: 150px;
     border: 1px solid black;
     padding: .5em;
 }
 
 .sended-message {
     width: 30%;
-    height: 100%;
-    background-color:  green;
+    background-color:  #d5f9ba;
     float: right;
     border-radius: 10px;
     margin-right: 60px;
+    padding: 1em;
 }
 
 .arrived-message {
     width: 30%;
-    height: 100%;
     background-color:  white;
     float: left;
     border-radius: 10px;
     margin-left: 60px;
+    padding: 1em;
 }
 
 /* - message keyboard bar */
@@ -192,6 +210,7 @@ main {
     width: 100%;
     height: 70px;
     border: 1px solid black;
+    background-color: #f3eee9;
     display: flex;
 }
 
