@@ -54,6 +54,8 @@
                         <!-- mettere icona ricerca -->
                         <input id="search-chat" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
+
+                    <!-- contacts list chat -->
                     <div class="contacts-container">
                         <div class="contact-item">
                             <div class="contact-box">
@@ -63,9 +65,7 @@
                                 </div>
                                 <div>
                                     <span class="hour-last-chat">12 AM</span>
-                                </div>
-                                
-                                                  
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -74,10 +74,28 @@
                 <!-- chat -->
 
                 <div class="chat">
-                    <div class="user-chat"></div>
+                    <div class="user-chat">
+                        <div class="user-box">
+                            <div class="user-nav-identity">
+                                <img src="img/avatar_1.jpg" alt="" srcset="">
+                                <span class="username">Name</span>                          
+                            </div>
+                            <div class="actions-app">
+                                <i class="fas fa-circle-notch"></i>                            
+                                <i class="fas fa-comment-alt"></i>
+                                <i class="fas fa-ellipsis-v"></i>                        
+                            </div>
+                        </div>
+                    </div>
                     <div class="chat-board">
                     </div>
-                    <div class="message-bar"></div>
+                    <div class="message-bar">
+                        <div class="emoji"></div>
+                        <div class="keyboard">
+                            <input id="keyboard" type="text" placeholder="scrivi un messaggio">
+                        </div>
+                        <div class="send-audio"></div>
+                    </div>
                 </div>
             </div>
         </main>
