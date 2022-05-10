@@ -20,7 +20,6 @@ body {
     width: 80vw;
     min-width: 950px;
     height: 95vh;
-    border: 1px solid black;
     margin-top: 2.5vh;
     background-color: white;
     display: flex;
@@ -37,7 +36,6 @@ main {
 /* nav */
 .nav {
     width: 35%;
-    border: 1px solid black;
     height: 100%;
 }
 
@@ -83,7 +81,6 @@ main {
 .active-notification {
     width: 100%;
     height: 70px;
-    border: 1px solid red;
     background-color: #8edafc;
     display: flex;
     align-items: center;
@@ -193,7 +190,6 @@ main {
 .user-chat {
     width: 100%;
     height: 60px;
-    border: 1px solid blue;
     background-color: #eaeaea;
 }
 
@@ -201,7 +197,6 @@ main {
 .chat-board {
     width: 100%;
     height: calc(100% - 130px);
-    border: 1px solid red;
     background-image: url(../img/mine.jpg);
     overflow: auto;
 }
@@ -209,7 +204,6 @@ main {
 .row {
 
     height: 150px;
-    border: 1px solid black;
     padding: .5em;
 }
 
@@ -235,7 +229,6 @@ main {
 .message-bar {
     width: 100%;
     height: 70px;
-    border: 1px solid black;
     background-color: #f3eee9;
     display: flex;
 }
