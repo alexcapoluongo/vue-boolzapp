@@ -103,17 +103,17 @@
 
                     <!-- - chat board -->
                     <div class="chat-board">
-                        <div class="row row-sended">
-                            <div class="sended-message">hey</div>
+                        <div v-for= "(item, index) in contacts" class="row" :class="item.messages[0].status === 'sent' ? 'sent' : 'received' ">   
+                            <div class="sent-message"> {{ item.messages[0].message }} {{ item.messages[0].status}}</div>
                         </div>
 
-                        <div class="row">
-                            <div class="arrived-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et est tenetur, quam dolorem nesciunt dicta necessitatibus non corrupti, officia culpa, inventore libero hic repellat aliquam beatae natus similique minima? Quis.</div>
+                        <div class="row received">
+                            <div class="received-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et est tenetur, quam dolorem nesciunt dicta necessitatibus non corrupti, officia culpa, inventore libero hic repellat aliquam beatae natus similique minima? Quis.</div>
                         </div>
 
 
-                        <div class="row row-sended">
-                            <div class="sended-message">ciao</div>
+                        <div class="row sent">
+                            <div class="sent-message">ciao</div>
                         </div>
 
                     </div>
