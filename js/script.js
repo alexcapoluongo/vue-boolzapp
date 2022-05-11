@@ -219,9 +219,10 @@ const app = new Vue (
                     // - scorrere oggetti
                     // - - scorrere nomi
                 this.contacts.forEach(element => {
-                    let namesToArray = element.name.split('');
+                    let namesToArray = element.name.toLowerCase().split('');
+                    
                     // console.log(namesToArray);
-                        if (namesToArray.includes(this.searchBarInput)) {
+                        if (namesToArray.includes(this.searchBarInput.toLowerCase())) {
                             element.visible = true;
                         } else {
                             element.visible = false;
@@ -238,10 +239,5 @@ const app = new Vue (
     }
 )
 
-// milestone 4
-// motore di ricerca. input -> v-model
-// devo scorrere l'array dei nomi
-// se l'array contiene (includes) lettere del v-model
-    // -visible:true -> non cambia niente
-// altrimenti
-    // -visible:false -> .remove??
+// bug 1 : legge correttemente solo una lettera alla volta
+// bug 2: una volta rimosso non riappare il div 
