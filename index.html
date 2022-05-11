@@ -109,6 +109,13 @@
                     <div class="chat-board">
                         <div v-for= "(item, index) in contacts[currentContact].messages" :class="item.status === 'sent' ? 'sent' : 'received' " class="row"> 
                             <div :class=" item.status + '-message' "> {{ item.message }} 
+                                <div @click="isShown = !isShown" class="delete-message">
+                                    <i class="fas fa-angle-down"></i>
+                                    <div v-if="isShown" class="drop-menu-delete">
+                                        <div class="info-message">item</div>
+                                        <div class="delete-btn">delete</div>
+                                    </div>
+                                </div>
                                 <div class="hour-message">12.00</div>
                             </div>
                         </div>

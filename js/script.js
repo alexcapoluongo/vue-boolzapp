@@ -170,6 +170,7 @@ const app = new Vue (
             currentContact: 0,
             messageToSend: "",
             searchBarInput: "",
+            isShown: false
         },
 
         methods: {
@@ -224,8 +225,11 @@ const app = new Vue (
                 this.contacts.forEach(element => {
                     console.log(element.date);
                 });
-            }
-            
+            },
+
+            deleteMessage: function() {
+                console.log('clicked');
+            },
         }
     }
 )

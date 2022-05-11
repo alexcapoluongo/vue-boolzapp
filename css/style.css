@@ -254,6 +254,40 @@ main {
     right: 1em;
 }
 
+.delete-message {
+    /* position: absolute;
+    top: .2em; 
+    right: .5em;*/
+    color: rgba(0,0,0, .5);
+}
+
+.delete-message i {
+    position: absolute;
+    top: .2em;
+    right: .5em;
+}
+
+.drop-menu-delete {
+    color: black;
+    background-color: #b1b1b1;
+    width: 100px;
+    text-align: center;
+    position: absolute;
+    top: 1em;
+    right:.5em;
+}
+
+.info-message {
+    height: 40px;
+    line-height: 40px;
+}
+
+.delete-btn {
+    height:40px;
+    line-height: 40px;
+}
+
+
 /* - message keyboard bar */
 .message-bar {
     width: 100%;
