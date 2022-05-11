@@ -170,7 +170,8 @@ const app = new Vue (
             currentContact: 0,
             messageToSend: "",
             searchBarInput: "",
-            isShown: false
+            isShown: false,
+            dateFormat: "",
         },
 
         methods: {
@@ -229,9 +230,20 @@ const app = new Vue (
 
             deleteMessage: function() {
                 this.contacts.forEach(element =>{
-                    element.messages.shift(element.messages.message);
+                    console.log('message deleted');
                 })
             },
+
+            dateFormatter: function() {
+                this.contacts.forEach(element => {
+                    const date = dayjs('element.messages[0].date').format('DD/MM/YYYY')
+                    console.log(date)
+                })
+            }
         }
     }
 )
+
+//bug to solve
+// [] active only one drop-menu-delete
+// [] delete only one message (call index??)
