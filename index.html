@@ -113,7 +113,7 @@
                                     <i class="fas fa-angle-down"></i>
                                     <div v-if="isShown" class="drop-menu-delete">
                                         <div class="info-message">item</div>
-                                        <div class="delete-btn">delete</div>
+                                        <div @click="deleteMessage" class="delete-btn">delete</div>
                                     </div>
                                 </div>
                                 <div class="hour-message">12.00</div>

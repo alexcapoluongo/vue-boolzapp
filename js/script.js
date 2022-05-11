@@ -228,7 +228,9 @@ const app = new Vue (
             },
 
             deleteMessage: function() {
-                console.log('clicked');
+                this.contacts.forEach(element =>{
+                    element.messages.shift(element.messages.message);
+                })
             },
         }
     }

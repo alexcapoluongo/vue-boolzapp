@@ -253,11 +253,9 @@ main {
     bottom: .5em;
     right: 1em;
 }
+/* + drop menu delete */
 
 .delete-message {
-    /* position: absolute;
-    top: .2em; 
-    right: .5em;*/
     color: rgba(0,0,0, .5);
 }
 
@@ -269,12 +267,14 @@ main {
 
 .drop-menu-delete {
     color: black;
+    border: 1px solid black;
     background-color: #b1b1b1;
     width: 100px;
     text-align: center;
     position: absolute;
     top: 1em;
     right:.5em;
+    z-index: 1;
 }
 
 .info-message {
