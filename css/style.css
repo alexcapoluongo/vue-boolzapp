@@ -48,7 +48,11 @@ main {
 }
 
 .user-box {
-    display:flex;
+    width: 100%;
+    height: 60px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -71,6 +75,7 @@ main {
 .actions-app {
     display: flex;
     align-self: center;
+    margin-right: 1em;
 }
 
 .actions-app i {
@@ -191,12 +196,6 @@ main {
 .chat {
     width: 65%;
     height: 100%;
-}
-
-.user-chat {
-    width: 100%;
-    height: 60px;
-    background-color: #eaeaea;
 }
 
 /* - chat board */
