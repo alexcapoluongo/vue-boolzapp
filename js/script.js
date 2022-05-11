@@ -222,11 +222,11 @@ const app = new Vue (
                     let namesToArray = element.name.split('');
                     // console.log(namesToArray);
                         if (namesToArray.includes(this.searchBarInput)) {
-                            this.isVisible = true;
+                            element.visible = true;
                         } else {
-                            this.isVisible = false;
+                            element.visible = false;
                         }
-                        console.log(namesToArray, this.isVisible);
+                        console.log(namesToArray, element.visible);
                 });
 
             },

@@ -67,8 +67,8 @@
 
                     <!-- contacts list chat -->
                     <div class="contacts-container">
-                        <div v-for="(item, index) in contacts" class="contact-item">
-                            <div @click="changeChat(index)" class="contact-box" :class=" index === currentContact ? 'active' : '' " :class=" isVisible === false ? 'hidden' : '' " >
+                        <div v-for="(item, index) in contacts">
+                            <div @click="changeChat(index)" v-if="item.visible" class="contact-box contact-item" :class="index === currentContact ? 'active' : ''" >
                                 <div class="user-nav-identity" >
                                     <img :src="'img/avatar'+ item.avatar +'.jpg'" alt="" srcset="">
                                     <div class="user-text">
