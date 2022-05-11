@@ -232,6 +232,7 @@ main {
     border-radius: 10px;
     margin-right: 60px;
     padding: 1em;
+    position: relative;
 }
 
 .received-message {
@@ -241,6 +242,16 @@ main {
     border-radius: 10px;
     margin-left: 60px;
     padding: 1em;
+    position: relative;
+}
+
+.hour-message {
+    color: gray; 
+    float: right;
+    font-size: .7em;
+    position: absolute;
+    bottom: .5em;
+    right: 1em;
 }
 
 /* - message keyboard bar */

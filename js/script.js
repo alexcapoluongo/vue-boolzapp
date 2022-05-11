@@ -21,7 +21,7 @@ const app = new Vue (
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 16:15:22',
+                            date:  '10/01/2020 15:50:00',
                             message: 'Tutto fatto!',
                             status: 'received'
                         }
@@ -170,7 +170,6 @@ const app = new Vue (
             currentContact: 0,
             messageToSend: "",
             searchBarInput: "",
-            isVisible: ""
         },
 
         methods: {
@@ -194,7 +193,7 @@ const app = new Vue (
                 if(trimmedMessage.length > 0) {
                     this.contacts[this.currentContact].messages.push(
                         {
-                            'date': 'bla' ,
+                            'date': 'data' ,
                             'message': trimmedMessage,
                             'status': 'sent'
                         }
@@ -209,35 +208,24 @@ const app = new Vue (
             },
 
             searchBarChat: function() { 
-                // if(this.searchBarInput.includes(this.contacts.name)) {
-                //     console.log('nome presente'); 
-                //     } else {
-                //         console.log('nome assente');
-                //     }
-
-                //scorrere i contacts
-                    // - scorrere oggetti
-                    // - - scorrere nomi
                 this.contacts.forEach(element => {
                     let namesToArray = element.name.toLowerCase();
                     
-                    // console.log(namesToArray);
-                        if (namesToArray.includes(this.searchBarInput)) {
+                    if (namesToArray.includes(this.searchBarInput)) {
                             element.visible = true;
-                        } else {
+                    } else {
                             element.visible = false;
-                        }
-                        console.log(namesToArray, element.visible);
+                    }
                 });
 
-            },
+            }, 
 
+            dataToHours: function () {
+                this.contacts.forEach(element => {
+                    console.log(element.date);
+                });
+            }
             
-            
-
         }
     }
 )
-
-// bug 1 : legge correttemente solo una lettera alla volta
-// bug 2: una volta rimosso non riappare il div 
