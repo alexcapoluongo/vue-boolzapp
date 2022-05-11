@@ -169,8 +169,8 @@ const app = new Vue (
             ],
             currentContact: 0,
             messageToSend: "",
-            searchBarInput: ""
-
+            searchBarInput: "",
+            isVisible: ""
         },
 
         methods: {
@@ -220,14 +220,13 @@ const app = new Vue (
                     // - - scorrere nomi
                 this.contacts.forEach(element => {
                     let namesToArray = element.name.split('');
-                    let isVisible = element.visible
                     // console.log(namesToArray);
                         if (namesToArray.includes(this.searchBarInput)) {
-                            isVisible = true
+                            this.isVisible = true;
                         } else {
-                            isVisible = false
+                            this.isVisible = false;
                         }
-                        console.log(namesToArray, isVisible);
+                        console.log(namesToArray, this.isVisible);
                 });
 
             },
