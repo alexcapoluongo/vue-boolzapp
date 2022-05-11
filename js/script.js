@@ -219,10 +219,10 @@ const app = new Vue (
                     // - scorrere oggetti
                     // - - scorrere nomi
                 this.contacts.forEach(element => {
-                    let namesToArray = element.name.toLowerCase().split('');
+                    let namesToArray = element.name.toLowerCase();
                     
                     // console.log(namesToArray);
-                        if (namesToArray.includes(this.searchBarInput.toLowerCase())) {
+                        if (namesToArray.includes(this.searchBarInput)) {
                             element.visible = true;
                         } else {
                             element.visible = false;
