@@ -74,7 +74,7 @@
                                     <div class="user-text">
                                         <div class="username">{{ item.name }}</div> 
                                         <!-- solo la prima deve essere attiva -->
-                                        <div class="last-message">{{ item.messages[0].message }}...</div>                
+                                        <div class="last-message">{{ item.messages[1].message }}...</div>                
                                     </div>         
                                 </div> 
                                 <div>
@@ -103,18 +103,18 @@
 
                     <!-- - chat board -->
                     <div class="chat-board">
-                        <div v-for= "item in contacts.messages" class="row"> <!-- :class="item.messages[0].status === 'sent' ? 'sent' : 'received' "> -->   
-                            <div class="sent-message"> {{item}}</div>
+                        <div v-for= "(item, index) in contacts[currentContact].messages" :class="item.status === 'sent' ? 'sent' : 'received' " class="row"> 
+                            <div :class=" item.status + '-message' "> {{ item.message }} </div>
                         </div>
 
-                        <div class="row received">
+                        <!-- <div class="row received">
                             <div class="received-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et est tenetur, quam dolorem nesciunt dicta necessitatibus non corrupti, officia culpa, inventore libero hic repellat aliquam beatae natus similique minima? Quis.</div>
                         </div>
 
 
                         <div class="row sent">
                             <div class="sent-message">ciao</div>
-                        </div>
+                        </div> -->
 
                     </div>
 
