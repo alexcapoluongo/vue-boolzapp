@@ -72,9 +72,9 @@
                                 <div class="user-nav-identity">
                                     <img :src="'img/avatar'+ item.avatar +'.jpg'" alt="" srcset="">
                                     <div class="user-text">
-                                        <span class="username">{{ item.name }}</span> 
+                                        <div class="username">{{ item.name }}</div> 
                                         <!-- solo la prima deve essere attiva -->
-                                        <p class="last-message">{{ item.messages[0].message }}...</p>                
+                                        <div class="last-message">{{ item.messages[0].message }}...</div>                
                                     </div>         
                                 </div> 
                                 <div>

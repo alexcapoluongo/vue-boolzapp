@@ -10,6 +10,7 @@
 html {
     font-family: 'Lato', sans-serif;
     font-family: 'Montserrat', sans-serif;
+    font-size: .9em;
 }
 
 body {
@@ -58,6 +59,7 @@ main {
 
 .user-nav-identity {
     display: flex;
+    margin-left: 1em;
 }
 
 .username {
@@ -87,8 +89,8 @@ main {
 }
 
 .logo-bell-notification {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: white;
     border-radius: 50%;
     display: flex; 
@@ -99,7 +101,7 @@ main {
 }
 
 .logo-bell-notification i {
-    font-size: 2em;
+    font-size: 1.5em;
     color: #8edafc;
 }
 
@@ -168,9 +170,13 @@ main {
     border-radius: 50%;
 }
 
+.user-text {
+    margin-left: .8em;
+}
+
 .last-message {
     color: grey;
-    margin-left:1em;
+    margin-left:.7em;
     font-size:.8em;
 }
 
