@@ -91,8 +91,8 @@
                     <!-- - user-chat -->
                     <div class="user-box">
                         <div class="user-nav-identity">
-                            <img src="img/avatar_1.jpg" alt="" srcset="">
-                            <span class="username">name</span>                          
+                            <img :src="'img/avatar' + contacts[currentContact].avatar + '.jpg'" alt="" srcset="">
+                            <span class="username">{{contacts[currentContact].name}}</span>                          
                         </div>
                         <div class="actions-app">
                             <i class="fas fa-search"></i>                            
@@ -103,8 +103,8 @@
 
                     <!-- - chat board -->
                     <div class="chat-board">
-                        <div v-for= "(item, index) in contacts" class="row" :class="item.messages[0].status === 'sent' ? 'sent' : 'received' ">   
-                            <div class="sent-message"> {{ item.messages[0].message }} {{ item.messages[0].status}}</div>
+                        <div v-for= "item in contacts.messages" class="row"> <!-- :class="item.messages[0].status === 'sent' ? 'sent' : 'received' "> -->   
+                            <div class="sent-message"> {{item}}</div>
                         </div>
 
                         <div class="row received">
