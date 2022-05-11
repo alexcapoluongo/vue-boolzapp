@@ -167,7 +167,8 @@ const app = new Vue (
                     ],
                 }
             ],
-            currentContact: 0
+            currentContact: 0,
+            messageToSend: "",
 
         },
 
@@ -176,7 +177,23 @@ const app = new Vue (
             changeChat: function(index) {
                 this.currentContact = index;
                 console.log(this.currentContact);
+            },
+
+            sendMessage: function() {
+
+                let trimmedMessage = this.messageToSend.trim();
+                if(trimmedMessage.length > 0) {
+                    this.contacts[this.currentContact].messages.push(
+                        {'date': 'bla' ,
+                        'message': trimmedMessage,
+                        'status': 'sent'});
+                }
+                this.messageToSend = "";
             }
         }
     }
 )
+
+// milestone 3
+// pushare un messaggio nell'array messages con enter @keyup.enter
+// dargli lo stato sent

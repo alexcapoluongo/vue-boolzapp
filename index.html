@@ -106,16 +106,6 @@
                         <div v-for= "(item, index) in contacts[currentContact].messages" :class="item.status === 'sent' ? 'sent' : 'received' " class="row"> 
                             <div :class=" item.status + '-message' "> {{ item.message }} </div>
                         </div>
-
-                        <!-- <div class="row received">
-                            <div class="received-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et est tenetur, quam dolorem nesciunt dicta necessitatibus non corrupti, officia culpa, inventore libero hic repellat aliquam beatae natus similique minima? Quis.</div>
-                        </div>
-
-
-                        <div class="row sent">
-                            <div class="sent-message">ciao</div>
-                        </div> -->
-
                     </div>
 
                     <!-- - message bar -->
@@ -123,8 +113,8 @@
                         <div class="emoji">
                             <i class="far fa-smile"></i>
                         </div>
-                        <div class="keyboard">
-                            <input id="keyboard" type="text" placeholder="scrivi un messaggio">
+                        <div @keyup.enter="sendMessage" class="keyboard">
+                            <input id="keyboard" type="text" placeholder="scrivi un messaggio" v-model="messageToSend">
                         </div>
                         <div class="send-audio">
                             <i class="fas fa-microphone"></i>
