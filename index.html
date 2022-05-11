@@ -68,7 +68,7 @@
                     <!-- contacts list chat -->
                     <div class="contacts-container">
                         <div v-for="(item, index) in contacts" class="contact-item">
-                            <div class="contact-box" :class=" index === 0 ? 'active' : '' ">
+                            <div @click="changeChat(index)" class="contact-box" :class=" index === 0 ? 'active' : '' ">
                                 <div class="user-nav-identity">
                                     <img :src="'img/avatar'+ item.avatar +'.jpg'" alt="" srcset="">
                                     <div class="user-text">

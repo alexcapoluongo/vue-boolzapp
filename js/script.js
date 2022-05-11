@@ -173,6 +173,10 @@ const app = new Vue (
 
         methods: {
 
+            changeChat: function(index) {
+                this.currentContact = index;
+                console.log(this.currentContact);
+            }
         }
     }
 )
