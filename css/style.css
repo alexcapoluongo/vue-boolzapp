@@ -202,9 +202,12 @@ main {
 }
 
 .row {
-
-    height: 150px;
     padding: .5em;
+    display: flex;
+}
+
+.row-sended {
+    justify-content: flex-end;
 }
 
 .sended-message {
