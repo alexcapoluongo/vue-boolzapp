@@ -148,6 +148,11 @@ main {
     color:#bfc2c3;
 }
 
+.hidden {
+    display: none;
+}
+
+
 /* contacts */
 .contacts-container {
     width: 100%;

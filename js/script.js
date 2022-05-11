@@ -169,6 +169,7 @@ const app = new Vue (
             ],
             currentContact: 0,
             messageToSend: "",
+            searchBarInput: ""
 
         },
 
@@ -176,7 +177,6 @@ const app = new Vue (
 
             changeChat: function(index) {
                 this.currentContact = index;
-                console.log(this.currentContact);
             },
             
             receivedMessage: function() {
@@ -189,8 +189,6 @@ const app = new Vue (
                                 )
             },
                          
-            // timeOut: setTimeout(this.receivedMessage, 3000),
-
             sendMessage: function() {
                 let trimmedMessage = this.messageToSend.trim();
                 if(trimmedMessage.length > 0) {
@@ -204,16 +202,47 @@ const app = new Vue (
                 }
 
                 this.messageToSend = "";
-                
+
                 setTimeout (() => {
                     this.receivedMessage() 
-                }, 3000);
+                }, 1000);
             },
+
+            searchBarChat: function() { 
+                // if(this.searchBarInput.includes(this.contacts.name)) {
+                //     console.log('nome presente'); 
+                //     } else {
+                //         console.log('nome assente');
+                //     }
+
+                //scorrere i contacts
+                    // - scorrere oggetti
+                    // - - scorrere nomi
+                this.contacts.forEach(element => {
+                    let namesToArray = element.name.split('');
+                    let isVisible = element.visible
+                    // console.log(namesToArray);
+                        if (namesToArray.includes(this.searchBarInput)) {
+                            isVisible = true
+                        } else {
+                            isVisible = false
+                        }
+                        console.log(namesToArray, isVisible);
+                });
+
+            },
+
+            
+            
 
         }
     }
 )
 
-// milestone 3
-// pushare un messaggio nell'array messages con enter @keyup.enter
-// dargli lo stato sent
+// milestone 4
+// motore di ricerca. input -> v-model
+// devo scorrere l'array dei nomi
+// se l'array contiene (includes) lettere del v-model
+    // -visible:true -> non cambia niente
+// altrimenti
+    // -visible:false -> .remove??

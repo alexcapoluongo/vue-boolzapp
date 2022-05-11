@@ -62,14 +62,14 @@
                             </a>
                         </div>
                         
-                        <input id="search-chat" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input @keyup="searchBarChat" id="search-chat" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchBarInput">
                     </div>
 
                     <!-- contacts list chat -->
                     <div class="contacts-container">
                         <div v-for="(item, index) in contacts" class="contact-item">
-                            <div @click="changeChat(index)" class="contact-box" :class=" index === 0 ? 'active' : '' ">
-                                <div class="user-nav-identity">
+                            <div @click="changeChat(index)" class="contact-box" :class=" index === 0 ? 'active' : '' " >
+                                <div class="user-nav-identity" :class=" item.value === false ? 'hidden' : ''">
                                     <img :src="'img/avatar'+ item.avatar +'.jpg'" alt="" srcset="">
                                     <div class="user-text">
                                         <div class="username">{{ item.name }}</div> 
