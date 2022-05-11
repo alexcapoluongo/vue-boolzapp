@@ -67,8 +67,8 @@
 
                     <!-- contacts list chat -->
                     <div class="contacts-container">
-                        <div v-for="item in contacts" class="contact-item">
-                            <div class="contact-box">
+                        <div v-for="(item, index) in contacts" class="contact-item">
+                            <div class="contact-box" :class=" index === 0 ? 'active' : '' ">
                                 <div class="user-nav-identity">
                                     <img :src="'img/avatar'+ item.avatar +'.jpg'" alt="" srcset="">
                                     <div class="user-text">
@@ -109,7 +109,6 @@
                             <div class="sended-message">hey</div>
                         </div>
 
-                        <!-- //problema di sovrapposizione nei messaggi lunghi -->
                         <div class="row">
                             <div class="arrived-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et est tenetur, quam dolorem nesciunt dicta necessitatibus non corrupti, officia culpa, inventore libero hic repellat aliquam beatae natus similique minima? Quis.</div>
                         </div>
