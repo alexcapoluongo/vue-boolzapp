@@ -180,14 +180,16 @@ const app = new Vue (
             },
             
             receivedMessage: function() {
-                this.contacts[this.currentContact].messages.push(
-                {
-                    'date': 'bla',
-                    'message': 'ok',
-                    'status': 'received'
-                }
-                )
+                                this.contacts[this.currentContact].messages.push(
+                                {
+                                    'date': 'bla',
+                                    'message': 'ok',
+                                    'status': 'received'
+                                }
+                                )
             },
+                         
+            // timeOut: setTimeout(this.receivedMessage, 3000),
 
             sendMessage: function() {
                 let trimmedMessage = this.messageToSend.trim();
@@ -198,13 +200,14 @@ const app = new Vue (
                             'message': trimmedMessage,
                             'status': 'sent'
                         }
-
-                        );
+                    );
                 }
-                this.messageToSend = "";
 
-                this.receivedMessage();
-                // setTimeout(this.receivedMessage(), 2000);   
+                this.messageToSend = "";
+                
+                setTimeout (() => {
+                    this.receivedMessage() 
+                }, 3000);
             },
 
         }
