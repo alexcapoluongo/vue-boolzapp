@@ -178,18 +178,35 @@ const app = new Vue (
                 this.currentContact = index;
                 console.log(this.currentContact);
             },
+            
+            receivedMessage: function() {
+                this.contacts[this.currentContact].messages.push(
+                {
+                    'date': 'bla',
+                    'message': 'ok',
+                    'status': 'received'
+                }
+                )
+            },
 
             sendMessage: function() {
-
                 let trimmedMessage = this.messageToSend.trim();
                 if(trimmedMessage.length > 0) {
                     this.contacts[this.currentContact].messages.push(
-                        {'date': 'bla' ,
-                        'message': trimmedMessage,
-                        'status': 'sent'});
+                        {
+                            'date': 'bla' ,
+                            'message': trimmedMessage,
+                            'status': 'sent'
+                        }
+
+                        );
                 }
                 this.messageToSend = "";
-            }
+
+                this.receivedMessage();
+                // setTimeout(this.receivedMessage(), 2000);   
+            },
+
         }
     }
 )
