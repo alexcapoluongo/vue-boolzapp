@@ -173,6 +173,7 @@ const app = new Vue (
             messageToSend: "",
             searchBarInput: "",
             isShown: false,
+            isMessageVisible:true,
             dateFormat: "",
         },
 
@@ -237,14 +238,16 @@ const app = new Vue (
             }, 
 
             deleteMessage: function(index) {
-                this.contacts[this.currentContact].messages.forEach(element =>{
-                    // element.split(element.message[index]);        
-                    if (this.currentMessage == index) {
-                        console.log('delete this')
-                    } else {
-                        console.log('this remains');
-                    }
-                })
+                // this.contacts[this.currentContact].messages.forEach(element =>{
+                //     // element.split(element.message[index]);        
+                //         console.log(element.message);       
+                // })
+                console.log(index);
+                if (index == this.currentMessage) {
+                    this.isMessageVisible = false;
+                }
+                
+                
             },
 
             getCurrentTime() {
@@ -267,3 +270,4 @@ const app = new Vue (
 // - prelevare l'indice dell'elemento
 // - prelevare l'indice di messages.message
 // - togliere il mex dall'array di messages
+// + if indice del messaggio cliccato è uguale a current number else no
