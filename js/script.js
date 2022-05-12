@@ -238,16 +238,11 @@ const app = new Vue (
             }, 
 
             deleteMessage: function(index) {
-                    this.contacts[this.currentContact].messages.forEach(element =>{
-                        // element.split(element.message[index]);        
-                            console.log(element.message);       
-                            console.log(index);
-                            if (index !== this.currentMessage) {
-                                this.isMessageVisible = true;
-                            } else {
-                                this.isMessageVisible = false
-                            }
-                })
+                    let clickedMessage = this.contacts[this.currentContact].messages[index].message; 
+                    console.log(clickedMessage, index);
+                    if(index == this.currentMessage) {
+                        this.contacts[this.currentContact].messages.splice(index)
+                    }
             },
 
             getCurrentTime() {
