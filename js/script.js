@@ -169,6 +169,7 @@ const app = new Vue (
                 }
             ],
             currentContact: 0,
+            currentMessage: "",
             messageToSend: "",
             searchBarInput: "",
             isShown: false,
@@ -231,6 +232,10 @@ const app = new Vue (
                 });
             },
 
+            showDrop: function(index) {
+                this.currentMessage = index;
+            }, 
+
             deleteMessage: function(index) {
                 this.contacts.forEach(element =>{
                     console.log('message deleted', index);
@@ -250,6 +255,6 @@ const app = new Vue (
 )
 
 //bug to solve
-// [] active only one drop-menu-delete
+// [*] active only one drop-menu-delete
 // [] delete only one message (call index??)
 // [*] show only hour on chat, 
