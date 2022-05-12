@@ -81,7 +81,7 @@
                                     </div>         
                                 </div> 
                                 <div>
-                                    <span class="hour-last-chat">{{ item.messages[item.messages.length - 1].date }}</span>
+                                    <span class="hour-last-chat">{{ getTimeFormatted(item.messages[item.messages.length - 1].date) }}</span>
 
                                 </div>                                
                             </div>
@@ -113,10 +113,10 @@
                                     <i class="fas fa-angle-down"></i>
                                     <div v-if="isShown" class="drop-menu-delete">
                                         <div class="info-message">item</div>
-                                        <div @click="deleteMessage" class="delete-btn">delete</div>
+                                        <div @click="deleteMessage(index)" class="delete-btn">delete</div>
                                     </div>
                                 </div>
-                                <div class="hour-message">12.00</div>
+                                <div class="hour-message"> {{getTimeFormatted(item.date)}} </div>
                             </div>
                         </div>
                     </div>
@@ -137,12 +137,13 @@
             </div>
         </main>
         <!-- /MAIN -->
-        <button @click="dateFormatter">push</button>
+        <!-- <button @click="dateFormatter">push</button> -->
     </div>
 
     
 
     <!-- script -->
     <script src="js/script.js"></script>
+
 </body>
 </html>

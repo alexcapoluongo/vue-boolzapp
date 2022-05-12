@@ -1,3 +1,4 @@
+
 const app = new Vue (
     {
         el: "#root",
@@ -43,7 +44,7 @@ const app = new Vue (
                             status: 'received'
                         },
                         {
-                            date: '20/03/2020 16:35:00',
+                            date: '02/05/2022 11:35:00',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
                         }
@@ -65,7 +66,7 @@ const app = new Vue (
                             status: 'sent'
                         },
                         {
-                            date: '28/03/2020 16:15:22',
+                            date: '10/04/2020 15:15:22',
                             message: 'Ah scusa!',
                             status: 'received'
                         }
@@ -82,7 +83,7 @@ const app = new Vue (
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: '10/01/2020 15:32:00',
                             message: 'Si, ma preferirei andare al cinema',
                             status: 'received'
                         }
@@ -183,11 +184,12 @@ const app = new Vue (
             receivedMessage: function() {
                                 this.contacts[this.currentContact].messages.push(
                                 {
-                                    'date': 'bla',
+                                    'date': this.getCurrentTime(),
                                     'message': 'ok',
                                     'status': 'received'
                                 }
                                 )
+                                
             },
                          
             sendMessage: function() {
@@ -195,7 +197,7 @@ const app = new Vue (
                 if(trimmedMessage.length > 0) {
                     this.contacts[this.currentContact].messages.push(
                         {
-                            'date': 'data' ,
+                            'date': this.getCurrentTime() ,
                             'message': trimmedMessage,
                             'status': 'sent'
                         }
@@ -204,6 +206,7 @@ const app = new Vue (
 
                 this.messageToSend = "";
 
+                
                 setTimeout (() => {
                     this.receivedMessage() 
                 }, 1000);
@@ -228,17 +231,19 @@ const app = new Vue (
                 });
             },
 
-            deleteMessage: function() {
+            deleteMessage: function(index) {
                 this.contacts.forEach(element =>{
-                    console.log('message deleted');
+                    console.log('message deleted', index);
                 })
             },
 
-            dateFormatter: function() {
-                this.contacts.forEach(element => {
-                    const date = dayjs('element.messages[0].date').format('DD/MM/YYYY')
-                    console.log(date)
-                })
+            getCurrentTime() {
+                return dayjs().format('DD-MM-YYYY HH:mm:ss')
+            },
+
+            getTimeFormatted(date) {
+                const dayjsDate = dayjs(date, 'DD/MM/YYYY HH:mm:ss');
+                return dayjsDate.format('HH:mm')
             }
         }
     }
@@ -247,3 +252,4 @@ const app = new Vue (
 //bug to solve
 // [] active only one drop-menu-delete
 // [] delete only one message (call index??)
+// [*] show only hour on chat, 
