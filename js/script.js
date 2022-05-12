@@ -238,16 +238,16 @@ const app = new Vue (
             }, 
 
             deleteMessage: function(index) {
-                // this.contacts[this.currentContact].messages.forEach(element =>{
-                //     // element.split(element.message[index]);        
-                //         console.log(element.message);       
-                // })
-                console.log(index);
-                if (index == this.currentMessage) {
-                    this.isMessageVisible = false;
-                }
-                
-                
+                    this.contacts[this.currentContact].messages.forEach(element =>{
+                        // element.split(element.message[index]);        
+                            console.log(element.message);       
+                            console.log(index);
+                            if (index !== this.currentMessage) {
+                                this.isMessageVisible = true;
+                            } else {
+                                this.isMessageVisible = false
+                            }
+                })
             },
 
             getCurrentTime() {
@@ -265,9 +265,5 @@ const app = new Vue (
 //bug to solve
 // [*] active only one drop-menu-delete
 // [*] show only hour on chat, 
-// [] delete only one message (call index??)
-// in ciclo forEach
-// - prelevare l'indice dell'elemento
-// - prelevare l'indice di messages.message
-// - togliere il mex dall'array di messages
-// + if indice del messaggio cliccato è uguale a current number else no
+// [] delete only one message and not every one (call index??)
+
