@@ -237,8 +237,13 @@ const app = new Vue (
             }, 
 
             deleteMessage: function(index) {
-                this.contacts.forEach(element =>{
-                    console.log('message deleted', index);
+                this.contacts[this.currentContact].messages.forEach(element =>{
+                    // element.split(element.message[index]);        
+                    if (this.currentMessage == index) {
+                        console.log('delete this')
+                    } else {
+                        console.log('this remains');
+                    }
                 })
             },
 
@@ -256,5 +261,9 @@ const app = new Vue (
 
 //bug to solve
 // [*] active only one drop-menu-delete
-// [] delete only one message (call index??)
 // [*] show only hour on chat, 
+// [] delete only one message (call index??)
+// in ciclo forEach
+// - prelevare l'indice dell'elemento
+// - prelevare l'indice di messages.message
+// - togliere il mex dall'array di messages
